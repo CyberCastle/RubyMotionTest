@@ -1,0 +1,3341 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<struct name='GMSMapPoint' type='{GMSMapPoint=&quot;x&quot;d&quot;y&quot;d}'>
+<field declared_type='double' name='x' type='d'/>
+<field declared_type='double' name='y' type='d'/>
+</struct>
+<struct name='GMSOrientation' type='{_GMSOrientation=&quot;heading&quot;d&quot;pitch&quot;d}'>
+<field const='true' declared_type='CLLocationDirection' name='heading' type='d'/>
+<field const='true' declared_type='double' name='pitch' type='d'/>
+</struct>
+<struct name='GMSVisibleRegion' type='{_GMSVisibleRegion=&quot;nearLeft&quot;{?=&quot;latitude&quot;d&quot;longitude&quot;d}&quot;nearRight&quot;{?=&quot;latitude&quot;d&quot;longitude&quot;d}&quot;farLeft&quot;{?=&quot;latitude&quot;d&quot;longitude&quot;d}&quot;farRight&quot;{?=&quot;latitude&quot;d&quot;longitude&quot;d}}'>
+<field declared_type='CLLocationCoordinate2D' name='nearLeft' type='{_CLLocationCoordinate2D=&quot;latitude&quot;d&quot;longitude&quot;d}'/>
+<field declared_type='CLLocationCoordinate2D' name='nearRight' type='{_CLLocationCoordinate2D=&quot;latitude&quot;d&quot;longitude&quot;d}'/>
+<field declared_type='CLLocationCoordinate2D' name='farLeft' type='{_CLLocationCoordinate2D=&quot;latitude&quot;d&quot;longitude&quot;d}'/>
+<field declared_type='CLLocationCoordinate2D' name='farRight' type='{_CLLocationCoordinate2D=&quot;latitude&quot;d&quot;longitude&quot;d}'/>
+</struct>
+<constant const='true' declared_type='NSString*' name='AFNetworkingOperationDidFinishNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingOperationDidStartNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingOperationFailingURLRequestErrorKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingOperationFailingURLResponseErrorKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingReachabilityDidChangeNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingReachabilityNotificationStatusItem' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidCompleteAssetPathKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidCompleteErrorKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidCompleteNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidCompleteResponseDataKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidCompleteResponseSerializerKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidCompleteSerializedResponseKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidFinishAssetPathKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidFinishErrorKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidFinishNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidFinishResponseDataKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidFinishResponseSerializerKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidFinishSerializedResponseKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidResumeNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidStartNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFNetworkingTaskDidSuspendNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFURLRequestSerializationErrorDomain' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFURLResponseSerializationErrorDomain' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFURLSessionDidInvalidateNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='AFURLSessionDownloadTaskDidFailToMoveFileNotification' type='@'/>
+<constant const='true' declared_type='NSTimeInterval' name='kAFUploadStream3GSuggestedDelay' type='d'/>
+<constant const='true' declared_type='NSUInteger' name='kAFUploadStream3GSuggestedPacketSize' type='I' type64='Q'/>
+<constant const='true' declared_type='NSString*' name='kGMSAccessibilityCompass' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSAccessibilityMyLocation' type='@'/>
+<constant const='true' declared_type='CLLocationDistance' name='kGMSEarthRadius' type='d'/>
+<constant const='true' declared_type='double' name='kGMSEquatorProjectedMeter' type='d'/>
+<constant const='true' declared_type='CGPoint' name='kGMSGroundOverlayDefaultAnchor' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerCameraBearingKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerCameraLatitudeKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerCameraLongitudeKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerCameraViewingAngleKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerCameraZoomLevelKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerPanoramaFOVKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerPanoramaHeadingKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerPanoramaPitchKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSLayerPanoramaZoomKey' type='@'/>
+<constant const='true' declared_type='CGPoint' name='kGMSMarkerDefaultGroundAnchor' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<constant const='true' declared_type='CGPoint' name='kGMSMarkerDefaultInfoWindowAnchor' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<constant const='true' declared_type='NSString*' name='kGMSMarkerLayerLatitude' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSMarkerLayerLongitude' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSMarkerLayerOpacity' type='@'/>
+<constant const='true' declared_type='NSString*' name='kGMSMarkerLayerRotation' type='@'/>
+<constant const='true' declared_type='float' name='kGMSMaxZoomLevel' type='f'/>
+<constant const='true' declared_type='float' name='kGMSMinZoomLevel' type='f'/>
+<constant const='true' declared_type='UIImage*' name='kGMSTileLayerNoTile' type='@'/>
+<enum name='AFHTTPRequestQueryStringDefaultStyle' value='0'/>
+<enum name='AFNetworkReachabilityStatusNotReachable' value='0'/>
+<enum name='AFNetworkReachabilityStatusReachableViaWWAN' value='1'/>
+<enum name='AFNetworkReachabilityStatusReachableViaWiFi' value='2'/>
+<enum name='AFNetworkReachabilityStatusUnknown' value='-1'/>
+<enum name='AFSSLPinningModeCertificate' value='2'/>
+<enum name='AFSSLPinningModeNone' value='0'/>
+<enum name='AFSSLPinningModePublicKey' value='1'/>
+<enum name='COCOAPODS_VERSION_MAJOR_AFNetworking' value='2'/>
+<enum name='COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLConnection' value='2'/>
+<enum name='COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLSession' value='2'/>
+<enum name='COCOAPODS_VERSION_MAJOR_AFNetworking_Reachability' value='2'/>
+<enum name='COCOAPODS_VERSION_MAJOR_AFNetworking_Security' value='2'/>
+<enum name='COCOAPODS_VERSION_MAJOR_AFNetworking_Serialization' value='2'/>
+<enum name='COCOAPODS_VERSION_MAJOR_AFNetworking_UIKit' value='2'/>
+<enum name='COCOAPODS_VERSION_MAJOR_Google_Maps_iOS_SDK' value='1'/>
+<enum name='COCOAPODS_VERSION_MINOR_AFNetworking' value='3'/>
+<enum name='COCOAPODS_VERSION_MINOR_AFNetworking_NSURLConnection' value='3'/>
+<enum name='COCOAPODS_VERSION_MINOR_AFNetworking_NSURLSession' value='3'/>
+<enum name='COCOAPODS_VERSION_MINOR_AFNetworking_Reachability' value='3'/>
+<enum name='COCOAPODS_VERSION_MINOR_AFNetworking_Security' value='3'/>
+<enum name='COCOAPODS_VERSION_MINOR_AFNetworking_Serialization' value='3'/>
+<enum name='COCOAPODS_VERSION_MINOR_AFNetworking_UIKit' value='3'/>
+<enum name='COCOAPODS_VERSION_MINOR_Google_Maps_iOS_SDK' value='8'/>
+<enum name='COCOAPODS_VERSION_PATCH_AFNetworking' value='1'/>
+<enum name='COCOAPODS_VERSION_PATCH_AFNetworking_NSURLConnection' value='1'/>
+<enum name='COCOAPODS_VERSION_PATCH_AFNetworking_NSURLSession' value='1'/>
+<enum name='COCOAPODS_VERSION_PATCH_AFNetworking_Reachability' value='1'/>
+<enum name='COCOAPODS_VERSION_PATCH_AFNetworking_Security' value='1'/>
+<enum name='COCOAPODS_VERSION_PATCH_AFNetworking_Serialization' value='1'/>
+<enum name='COCOAPODS_VERSION_PATCH_AFNetworking_UIKit' value='1'/>
+<enum name='COCOAPODS_VERSION_PATCH_Google_Maps_iOS_SDK' value='1'/>
+<enum name='kGMSGeocoderErrorInternal' value='2'/>
+<enum name='kGMSGeocoderErrorInvalidCoordinate' value='1'/>
+<enum name='kGMSLengthGeodesic' value='0'/>
+<enum name='kGMSLengthProjected' value='2'/>
+<enum name='kGMSLengthRhumb' value='1'/>
+<enum name='kGMSMarkerAnimationNone' value='0'/>
+<enum name='kGMSMarkerAnimationPop' value='1'/>
+<enum name='kGMSTypeHybrid' value='4'/>
+<enum name='kGMSTypeNone' value='5'/>
+<enum name='kGMSTypeNormal' value='1'/>
+<enum name='kGMSTypeSatellite' value='2'/>
+<enum name='kGMSTypeTerrain' value='3'/>
+<function name='AFStringFromNetworkReachabilityStatus'>
+<arg declared_type='AFNetworkReachabilityStatus' name='status' type='i' type64='q'/>
+<retval declared_type='NSString*' type='@'/>
+</function>
+<function name='GMSGeometryArea'>
+<arg declared_type='GMSPath*' name='path' type='@'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='GMSGeometryContainsLocation'>
+<arg declared_type='CLLocationCoordinate2D' name='point' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='GMSPath*' name='path' type='@'/>
+<arg declared_type='BOOL' name='geodesic' type='B'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='GMSGeometryDistance'>
+<arg declared_type='CLLocationCoordinate2D' name='from' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationCoordinate2D' name='to' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CLLocationDistance' type='d'/>
+</function>
+<function name='GMSGeometryHeading'>
+<arg declared_type='CLLocationCoordinate2D' name='from' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationCoordinate2D' name='to' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CLLocationDirection' type='d'/>
+</function>
+<function name='GMSGeometryInterpolate'>
+<arg declared_type='CLLocationCoordinate2D' name='from' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationCoordinate2D' name='to' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='double' name='fraction' type='d'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</function>
+<function name='GMSGeometryIsLocationOnPath'>
+<arg declared_type='CLLocationCoordinate2D' name='point' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='GMSPath*' name='path' type='@'/>
+<arg declared_type='BOOL' name='geodesic' type='B'/>
+<arg declared_type='CLLocationDistance' name='tolerance' type='d'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='GMSGeometryLength'>
+<arg declared_type='GMSPath*' name='path' type='@'/>
+<retval declared_type='CLLocationDistance' type='d'/>
+</function>
+<function name='GMSGeometryOffset'>
+<arg declared_type='CLLocationCoordinate2D' name='from' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationDistance' name='distance' type='d'/>
+<arg declared_type='CLLocationDirection' name='heading' type='d'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</function>
+<function name='GMSGeometrySignedArea'>
+<arg declared_type='GMSPath*' name='path' type='@'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='GMSMapPointDistance'>
+<arg declared_type='GMSMapPoint' name='a' type='{GMSMapPoint=dd}'/>
+<arg declared_type='GMSMapPoint' name='b' type='{GMSMapPoint=dd}'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='GMSMapPointInterpolate'>
+<arg declared_type='GMSMapPoint' name='a' type='{GMSMapPoint=dd}'/>
+<arg declared_type='GMSMapPoint' name='b' type='{GMSMapPoint=dd}'/>
+<arg declared_type='double' name='t' type='d'/>
+<retval declared_type='GMSMapPoint' type='{GMSMapPoint=dd}'/>
+</function>
+<function inline='true' name='GMSOrientationMake'>
+<arg declared_type='CLLocationDirection' name='heading' type='d'/>
+<arg declared_type='double' name='pitch' type='d'/>
+<retval declared_type='GMSOrientation' type='{_GMSOrientation=dd}'/>
+</function>
+<function name='GMSProject'>
+<arg declared_type='CLLocationCoordinate2D' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='GMSMapPoint' type='{GMSMapPoint=dd}'/>
+</function>
+<function name='GMSStyleSpans'>
+<arg declared_type='GMSPath*' name='path' type='@'/>
+<arg declared_type='NSArray*' name='styles' type='@'/>
+<arg declared_type='NSArray*' name='lengths' type='@'/>
+<arg declared_type='int' name='lengthKind' type='i'/>
+<arg declared_type='double' name='lengthOffset' type='d'/>
+<retval declared_type='NSArray*' type='@'/>
+</function>
+<function name='GMSUnproject'>
+<arg declared_type='GMSMapPoint' name='point' type='{GMSMapPoint=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</function>
+<class name='AFCompoundResponseSerializer'>
+<method class_method='true' selector='compoundSerializerWithResponseSerializers:'>
+<arg declared_type='NSArray*' index='0' name='responseSerializers' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='responseSerializers'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</class>
+<class name='AFHTTPRequestOperation'>
+<method selector='response'>
+<retval declared_type='NSHTTPURLResponse*' type='@'/>
+</method>
+<method selector='responseObject'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='responseSerializer'>
+<retval declared_type='AFHTTPResponseSerializer*' type='@'/>
+</method>
+<method selector='setCompletionBlockWithSuccess:failure:'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='0' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='1' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setResponseSerializer:'>
+<arg declared_type='AFHTTPResponseSerializer*' index='0' name='responseSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='AFHTTPRequestOperationManager'>
+<method selector='DELETE:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='GET:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='HEAD:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='HTTPRequestOperationWithRequest:success:failure:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='1' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='2' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='PATCH:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='POST:parameters:constructingBodyWithBlock:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(id)' function_pointer='true' index='2' name='block' type='@?'>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='3' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='4' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='POST:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='PUT:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='AFHTTPRequestOperation*' type='@'/>
+</method>
+<method selector='baseURL'>
+<retval declared_type='NSURL*' type='@'/>
+</method>
+<method selector='completionGroup'>
+<retval declared_type='dispatch_group_t' type='@'/>
+</method>
+<method selector='completionQueue'>
+<retval declared_type='dispatch_queue_t' type='@'/>
+</method>
+<method selector='credential'>
+<retval declared_type='NSURLCredential*' type='@'/>
+</method>
+<method selector='initWithBaseURL:'>
+<arg declared_type='NSURL*' index='0' name='url' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='manager'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='operationQueue'>
+<retval declared_type='NSOperationQueue*' type='@'/>
+</method>
+<method selector='reachabilityManager'>
+<retval declared_type='AFNetworkReachabilityManager*' type='@'/>
+</method>
+<method selector='requestSerializer'>
+<retval declared_type='AFHTTPRequestSerializer*' type='@'/>
+</method>
+<method selector='responseSerializer'>
+<retval declared_type='AFHTTPResponseSerializer*' type='@'/>
+</method>
+<method selector='securityPolicy'>
+<retval declared_type='AFSecurityPolicy*' type='@'/>
+</method>
+<method selector='setCompletionGroup:'>
+<arg declared_type='dispatch_group_t' index='0' name='completionGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCompletionQueue:'>
+<arg declared_type='dispatch_queue_t' index='0' name='completionQueue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCredential:'>
+<arg declared_type='NSURLCredential*' index='0' name='credential' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOperationQueue:'>
+<arg declared_type='NSOperationQueue*' index='0' name='operationQueue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReachabilityManager:'>
+<arg declared_type='AFNetworkReachabilityManager*' index='0' name='reachabilityManager' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRequestSerializer:'>
+<arg declared_type='AFHTTPRequestSerializer*' index='0' name='requestSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setResponseSerializer:'>
+<arg declared_type='AFHTTPResponseSerializer*' index='0' name='responseSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSecurityPolicy:'>
+<arg declared_type='AFSecurityPolicy*' index='0' name='securityPolicy' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShouldUseCredentialStorage:'>
+<arg declared_type='BOOL' index='0' name='shouldUseCredentialStorage' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shouldUseCredentialStorage'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='AFHTTPRequestSerializer'>
+<method selector='HTTPMethodsEncodingParametersInURI'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='HTTPRequestHeaders'>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+<method selector='HTTPShouldHandleCookies'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='HTTPShouldUsePipelining'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='allowsCellularAccess'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='cachePolicy'>
+<retval declared_type='NSURLRequestCachePolicy' type='I' type64='Q'/>
+</method>
+<method selector='clearAuthorizationHeader'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='multipartFormRequestWithMethod:URLString:parameters:constructingBodyWithBlock:'>
+<arg declared_type='NSString*' index='0' name='method' type='@'/>
+<arg declared_type='NSString*' index='1' name='URLString' type='@'/>
+<arg declared_type='NSDictionary*' index='2' name='parameters' type='@'/>
+<arg declared_type='void (^)(id)' function_pointer='true' index='3' name='block' type='@?'>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSMutableURLRequest*' type='@'/>
+</method>
+<method selector='multipartFormRequestWithMethod:URLString:parameters:constructingBodyWithBlock:error:'>
+<arg declared_type='NSString*' index='0' name='method' type='@'/>
+<arg declared_type='NSString*' index='1' name='URLString' type='@'/>
+<arg declared_type='NSDictionary*' index='2' name='parameters' type='@'/>
+<arg declared_type='void (^)(id)' function_pointer='true' index='3' name='block' type='@?'>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='NSError**' index='4' name='error' type='^@'/>
+<retval declared_type='NSMutableURLRequest*' type='@'/>
+</method>
+<method selector='networkServiceType'>
+<retval declared_type='NSURLRequestNetworkServiceType' type='I' type64='Q'/>
+</method>
+<method selector='requestWithMethod:URLString:parameters:'>
+<arg declared_type='NSString*' index='0' name='method' type='@'/>
+<arg declared_type='NSString*' index='1' name='URLString' type='@'/>
+<arg declared_type='id' index='2' name='parameters' type='@'/>
+<retval declared_type='NSMutableURLRequest*' type='@'/>
+</method>
+<method selector='requestWithMethod:URLString:parameters:error:'>
+<arg declared_type='NSString*' index='0' name='method' type='@'/>
+<arg declared_type='NSString*' index='1' name='URLString' type='@'/>
+<arg declared_type='id' index='2' name='parameters' type='@'/>
+<arg declared_type='NSError**' index='3' name='error' type='^@'/>
+<retval declared_type='NSMutableURLRequest*' type='@'/>
+</method>
+<method selector='requestWithMultipartFormRequest:writingStreamContentsToFile:completionHandler:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='NSURL*' index='1' name='fileURL' type='@'/>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='2' name='handler' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSMutableURLRequest*' type='@'/>
+</method>
+<method class_method='true' selector='serializer'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setAllowsCellularAccess:'>
+<arg declared_type='BOOL' index='0' name='allowsCellularAccess' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAuthorizationHeaderFieldWithToken:'>
+<arg declared_type='NSString*' index='0' name='token' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAuthorizationHeaderFieldWithUsername:password:'>
+<arg declared_type='NSString*' index='0' name='username' type='@'/>
+<arg declared_type='NSString*' index='1' name='password' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCachePolicy:'>
+<arg declared_type='NSURLRequestCachePolicy' index='0' name='cachePolicy' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHTTPMethodsEncodingParametersInURI:'>
+<arg declared_type='NSSet*' index='0' name='HTTPMethodsEncodingParametersInURI' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHTTPShouldHandleCookies:'>
+<arg declared_type='BOOL' index='0' name='HTTPShouldHandleCookies' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHTTPShouldUsePipelining:'>
+<arg declared_type='BOOL' index='0' name='HTTPShouldUsePipelining' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNetworkServiceType:'>
+<arg declared_type='NSURLRequestNetworkServiceType' index='0' name='networkServiceType' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setQueryStringSerializationWithBlock:'>
+<arg declared_type='NSString *(^)(NSURLRequest *, NSDictionary *, NSError **)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLRequest*' type='@'/>
+<arg declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSError**' type='^@'/>
+<retval declared_type='NSString*' type='@'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setQueryStringSerializationWithStyle:'>
+<arg declared_type='AFHTTPRequestQueryStringSerializationStyle' index='0' name='style' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStringEncoding:'>
+<arg declared_type='NSStringEncoding' index='0' name='stringEncoding' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTimeoutInterval:'>
+<arg declared_type='NSTimeInterval' index='0' name='timeoutInterval' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setValue:forHTTPHeaderField:'>
+<arg declared_type='NSString*' index='0' name='value' type='@'/>
+<arg declared_type='NSString*' index='1' name='field' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stringEncoding'>
+<retval declared_type='NSStringEncoding' type='I' type64='Q'/>
+</method>
+<method selector='timeoutInterval'>
+<retval declared_type='NSTimeInterval' type='d'/>
+</method>
+</class>
+<class name='AFHTTPResponseSerializer'>
+<method selector='acceptableContentTypes'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='acceptableStatusCodes'>
+<retval declared_type='NSIndexSet*' type='@'/>
+</method>
+<method class_method='true' selector='serializer'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setAcceptableContentTypes:'>
+<arg declared_type='NSSet*' index='0' name='acceptableContentTypes' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAcceptableStatusCodes:'>
+<arg declared_type='NSIndexSet*' index='0' name='acceptableStatusCodes' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStringEncoding:'>
+<arg declared_type='NSStringEncoding' index='0' name='stringEncoding' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stringEncoding'>
+<retval declared_type='NSStringEncoding' type='I' type64='Q'/>
+</method>
+<method selector='validateResponse:data:error:'>
+<arg declared_type='NSHTTPURLResponse*' index='0' name='response' type='@'/>
+<arg declared_type='NSData*' index='1' name='data' type='@'/>
+<arg declared_type='NSError**' index='2' name='error' type='^@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='AFHTTPSessionManager'>
+<method selector='DELETE:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(NSURLSessionDataTask *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='GET:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(NSURLSessionDataTask *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='HEAD:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(NSURLSessionDataTask *)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='PATCH:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(NSURLSessionDataTask *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='POST:parameters:constructingBodyWithBlock:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(id)' function_pointer='true' index='2' name='block' type='@?'>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, id)' function_pointer='true' index='3' name='success' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, NSError *)' function_pointer='true' index='4' name='failure' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='POST:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(NSURLSessionDataTask *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='PUT:parameters:success:failure:'>
+<arg declared_type='NSString*' index='0' name='URLString' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='void (^)(NSURLSessionDataTask *, id)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='id' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLSessionDataTask *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='baseURL'>
+<retval declared_type='NSURL*' type='@'/>
+</method>
+<method selector='initWithBaseURL:'>
+<arg declared_type='NSURL*' index='0' name='url' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithBaseURL:sessionConfiguration:'>
+<arg declared_type='NSURL*' index='0' name='url' type='@'/>
+<arg declared_type='NSURLSessionConfiguration*' index='1' name='configuration' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='manager'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='requestSerializer'>
+<retval declared_type='AFHTTPRequestSerializer*' type='@'/>
+</method>
+<method selector='responseSerializer'>
+<retval declared_type='AFHTTPResponseSerializer*' type='@'/>
+</method>
+<method selector='setRequestSerializer:'>
+<arg declared_type='AFHTTPRequestSerializer*' index='0' name='requestSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setResponseSerializer:'>
+<arg declared_type='AFHTTPResponseSerializer*' index='0' name='responseSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='AFImageResponseSerializer'>
+<method selector='automaticallyInflatesResponseImage'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='imageScale'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='setAutomaticallyInflatesResponseImage:'>
+<arg declared_type='BOOL' index='0' name='automaticallyInflatesResponseImage' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageScale:'>
+<arg declared_type='CGFloat' index='0' name='imageScale' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='AFJSONRequestSerializer'>
+<method class_method='true' selector='serializerWithWritingOptions:'>
+<arg declared_type='NSJSONWritingOptions' index='0' name='writingOptions' type='I' type64='Q'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setWritingOptions:'>
+<arg declared_type='NSJSONWritingOptions' index='0' name='writingOptions' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='writingOptions'>
+<retval declared_type='NSJSONWritingOptions' type='I' type64='Q'/>
+</method>
+</class>
+<class name='AFJSONResponseSerializer'>
+<method selector='readingOptions'>
+<retval declared_type='NSJSONReadingOptions' type='I' type64='Q'/>
+</method>
+<method selector='removesKeysWithNullValues'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='serializerWithReadingOptions:'>
+<arg declared_type='NSJSONReadingOptions' index='0' name='readingOptions' type='I' type64='Q'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setReadingOptions:'>
+<arg declared_type='NSJSONReadingOptions' index='0' name='readingOptions' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRemovesKeysWithNullValues:'>
+<arg declared_type='BOOL' index='0' name='removesKeysWithNullValues' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='AFNetworkActivityIndicatorManager'>
+<method selector='decrementActivityCount'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='incrementActivityCount'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='isEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isNetworkActivityIndicatorVisible'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setEnabled:'>
+<arg declared_type='BOOL' index='0' name='enabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='sharedManager'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='AFNetworkReachabilityManager'>
+<method selector='initWithReachability:'>
+<arg declared_type='SCNetworkReachabilityRef' index='0' name='reachability' type='^{__SCNetworkReachability=}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isReachable'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isReachableViaWWAN'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isReachableViaWiFi'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='localizedNetworkReachabilityStatusString'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method class_method='true' selector='managerForAddress:'>
+<arg const='true' declared_type='struct sockaddr_in*' index='0' name='address' type='^{sockaddr_in=CCS{in_addr=I}[8c]}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='managerForDomain:'>
+<arg declared_type='NSString*' index='0' name='domain' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='networkReachabilityStatus'>
+<retval declared_type='AFNetworkReachabilityStatus' type='i' type64='q'/>
+</method>
+<method selector='setReachabilityStatusChangeBlock:'>
+<arg declared_type='void (^)(AFNetworkReachabilityStatus)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='AFNetworkReachabilityStatus' type='i' type64='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='sharedManager'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='startMonitoring'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stopMonitoring'>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='AFPropertyListRequestSerializer'>
+<method selector='format'>
+<retval declared_type='NSPropertyListFormat' type='I' type64='Q'/>
+</method>
+<method class_method='true' selector='serializerWithFormat:writeOptions:'>
+<arg declared_type='NSPropertyListFormat' index='0' name='format' type='I' type64='Q'/>
+<arg declared_type='NSPropertyListWriteOptions' index='1' name='writeOptions' type='I' type64='Q'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setFormat:'>
+<arg declared_type='NSPropertyListFormat' index='0' name='format' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setWriteOptions:'>
+<arg declared_type='NSPropertyListWriteOptions' index='0' name='writeOptions' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='writeOptions'>
+<retval declared_type='NSPropertyListWriteOptions' type='I' type64='Q'/>
+</method>
+</class>
+<class name='AFPropertyListResponseSerializer'>
+<method selector='format'>
+<retval declared_type='NSPropertyListFormat' type='I' type64='Q'/>
+</method>
+<method selector='readOptions'>
+<retval declared_type='NSPropertyListReadOptions' type='I' type64='Q'/>
+</method>
+<method class_method='true' selector='serializerWithFormat:readOptions:'>
+<arg declared_type='NSPropertyListFormat' index='0' name='format' type='I' type64='Q'/>
+<arg declared_type='NSPropertyListReadOptions' index='1' name='readOptions' type='I' type64='Q'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setFormat:'>
+<arg declared_type='NSPropertyListFormat' index='0' name='format' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReadOptions:'>
+<arg declared_type='NSPropertyListReadOptions' index='0' name='readOptions' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='AFSecurityPolicy'>
+<method selector='SSLPinningMode'>
+<retval declared_type='AFSSLPinningMode' type='I' type64='Q'/>
+</method>
+<method selector='allowInvalidCertificates'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='defaultPolicy'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='evaluateServerTrust:'>
+<arg declared_type='SecTrustRef' index='0' name='serverTrust' type='^{__SecTrust=}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='evaluateServerTrust:forDomain:'>
+<arg declared_type='SecTrustRef' index='0' name='serverTrust' type='^{__SecTrust=}'/>
+<arg declared_type='NSString*' index='1' name='domain' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pinnedCertificates'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method class_method='true' selector='policyWithPinningMode:'>
+<arg declared_type='AFSSLPinningMode' index='0' name='pinningMode' type='I' type64='Q'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setAllowInvalidCertificates:'>
+<arg declared_type='BOOL' index='0' name='allowInvalidCertificates' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPinnedCertificates:'>
+<arg declared_type='NSArray*' index='0' name='pinnedCertificates' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSSLPinningMode:'>
+<arg declared_type='AFSSLPinningMode' index='0' name='SSLPinningMode' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setValidatesCertificateChain:'>
+<arg declared_type='BOOL' index='0' name='validatesCertificateChain' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setValidatesDomainName:'>
+<arg declared_type='BOOL' index='0' name='validatesDomainName' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='validatesCertificateChain'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='validatesDomainName'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='AFURLConnectionOperation'>
+<method class_method='true' selector='batchOfRequestOperations:progressBlock:completionBlock:'>
+<arg declared_type='NSArray*' index='0' name='operations' type='@'/>
+<arg declared_type='void (^)(NSUInteger, NSUInteger)' function_pointer='true' index='1' name='progressBlock' type='@?'>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSArray *)' function_pointer='true' index='2' name='completionBlock' type='@?'>
+<arg declared_type='NSArray*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='completionGroup'>
+<retval declared_type='dispatch_group_t' type='@'/>
+</method>
+<method selector='completionQueue'>
+<retval declared_type='dispatch_queue_t' type='@'/>
+</method>
+<method selector='credential'>
+<retval declared_type='NSURLCredential*' type='@'/>
+</method>
+<method selector='error'>
+<retval declared_type='NSError*' type='@'/>
+</method>
+<method selector='initWithRequest:'>
+<arg declared_type='NSURLRequest*' index='0' name='urlRequest' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='inputStream'>
+<retval declared_type='NSInputStream*' type='@'/>
+</method>
+<method selector='isPaused'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='outputStream'>
+<retval declared_type='NSOutputStream*' type='@'/>
+</method>
+<method selector='pause'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='request'>
+<retval declared_type='NSURLRequest*' type='@'/>
+</method>
+<method selector='response'>
+<retval declared_type='NSURLResponse*' type='@'/>
+</method>
+<method selector='responseData'>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='responseString'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='responseStringEncoding'>
+<retval declared_type='NSStringEncoding' type='I' type64='Q'/>
+</method>
+<method selector='resume'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='runLoopModes'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='securityPolicy'>
+<retval declared_type='AFSecurityPolicy*' type='@'/>
+</method>
+<method selector='setCacheResponseBlock:'>
+<arg declared_type='NSCachedURLResponse *(^)(NSURLConnection *, NSCachedURLResponse *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLConnection*' type='@'/>
+<arg declared_type='NSCachedURLResponse*' type='@'/>
+<retval declared_type='NSCachedURLResponse*' type='@'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCompletionGroup:'>
+<arg declared_type='dispatch_group_t' index='0' name='completionGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCompletionQueue:'>
+<arg declared_type='dispatch_queue_t' index='0' name='completionQueue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCredential:'>
+<arg declared_type='NSURLCredential*' index='0' name='credential' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDownloadProgressBlock:'>
+<arg declared_type='void (^)(NSUInteger, long long, long long)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='long long' type='q'/>
+<arg declared_type='long long' type='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInputStream:'>
+<arg declared_type='NSInputStream*' index='0' name='inputStream' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOutputStream:'>
+<arg declared_type='NSOutputStream*' index='0' name='outputStream' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRedirectResponseBlock:'>
+<arg declared_type='NSURLRequest *(^)(NSURLConnection *, NSURLRequest *, NSURLResponse *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLConnection*' type='@'/>
+<arg declared_type='NSURLRequest*' type='@'/>
+<arg declared_type='NSURLResponse*' type='@'/>
+<retval declared_type='NSURLRequest*' type='@'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRunLoopModes:'>
+<arg declared_type='NSSet*' index='0' name='runLoopModes' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSecurityPolicy:'>
+<arg declared_type='AFSecurityPolicy*' index='0' name='securityPolicy' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShouldExecuteAsBackgroundTaskWithExpirationHandler:'>
+<arg declared_type='void (^)(void)' function_pointer='true' index='0' name='handler' type='@?'>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShouldUseCredentialStorage:'>
+<arg declared_type='BOOL' index='0' name='shouldUseCredentialStorage' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUploadProgressBlock:'>
+<arg declared_type='void (^)(NSUInteger, long long, long long)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='long long' type='q'/>
+<arg declared_type='long long' type='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUserInfo:'>
+<arg declared_type='NSDictionary*' index='0' name='userInfo' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setWillSendRequestForAuthenticationChallengeBlock:'>
+<arg declared_type='void (^)(NSURLConnection *, NSURLAuthenticationChallenge *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLConnection*' type='@'/>
+<arg declared_type='NSURLAuthenticationChallenge*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shouldUseCredentialStorage'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='userInfo'>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+</class>
+<class name='AFURLSessionManager'>
+<method selector='attemptsToRecreateUploadTasksForBackgroundSessions'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='completionGroup'>
+<retval declared_type='dispatch_group_t' type='@'/>
+</method>
+<method selector='completionQueue'>
+<retval declared_type='dispatch_queue_t' type='@'/>
+</method>
+<method selector='dataTaskWithRequest:completionHandler:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='void (^)(NSURLResponse *, id, NSError *)' function_pointer='true' index='1' name='completionHandler' type='@?'>
+<arg declared_type='NSURLResponse*' type='@'/>
+<arg declared_type='id' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDataTask*' type='@'/>
+</method>
+<method selector='dataTasks'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='downloadProgressForTask:'>
+<arg declared_type='NSURLSessionDownloadTask*' index='0' name='downloadTask' type='@'/>
+<retval declared_type='NSProgress*' type='@'/>
+</method>
+<method selector='downloadTaskWithRequest:progress:destination:completionHandler:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='NSProgress**' index='1' name='progress' type='^@'/>
+<arg declared_type='NSURL *(^)(NSURL *, NSURLResponse *)' function_pointer='true' index='2' name='destination' type='@?'>
+<arg declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURLResponse*' type='@'/>
+<retval declared_type='NSURL*' type='@'/>
+</arg>
+<arg declared_type='void (^)(NSURLResponse *, NSURL *, NSError *)' function_pointer='true' index='3' name='completionHandler' type='@?'>
+<arg declared_type='NSURLResponse*' type='@'/>
+<arg declared_type='NSURL*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDownloadTask*' type='@'/>
+</method>
+<method selector='downloadTaskWithResumeData:progress:destination:completionHandler:'>
+<arg declared_type='NSData*' index='0' name='resumeData' type='@'/>
+<arg declared_type='NSProgress**' index='1' name='progress' type='^@'/>
+<arg declared_type='NSURL *(^)(NSURL *, NSURLResponse *)' function_pointer='true' index='2' name='destination' type='@?'>
+<arg declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURLResponse*' type='@'/>
+<retval declared_type='NSURL*' type='@'/>
+</arg>
+<arg declared_type='void (^)(NSURLResponse *, NSURL *, NSError *)' function_pointer='true' index='3' name='completionHandler' type='@?'>
+<arg declared_type='NSURLResponse*' type='@'/>
+<arg declared_type='NSURL*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionDownloadTask*' type='@'/>
+</method>
+<method selector='downloadTasks'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='initWithSessionConfiguration:'>
+<arg declared_type='NSURLSessionConfiguration*' index='0' name='configuration' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='invalidateSessionCancelingTasks:'>
+<arg declared_type='BOOL' index='0' name='cancelPendingTasks' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='operationQueue'>
+<retval declared_type='NSOperationQueue*' type='@'/>
+</method>
+<method selector='reachabilityManager'>
+<retval declared_type='AFNetworkReachabilityManager*' type='@'/>
+</method>
+<method selector='responseSerializer'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='securityPolicy'>
+<retval declared_type='AFSecurityPolicy*' type='@'/>
+</method>
+<method selector='session'>
+<retval declared_type='NSURLSession*' type='@'/>
+</method>
+<method selector='setAttemptsToRecreateUploadTasksForBackgroundSessions:'>
+<arg declared_type='BOOL' index='0' name='attemptsToRecreateUploadTasksForBackgroundSessions' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCompletionGroup:'>
+<arg declared_type='dispatch_group_t' index='0' name='completionGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCompletionQueue:'>
+<arg declared_type='dispatch_queue_t' index='0' name='completionQueue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataTaskDidBecomeDownloadTaskBlock:'>
+<arg declared_type='void (^)(NSURLSession *, NSURLSessionDataTask *, NSURLSessionDownloadTask *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSURLSessionDownloadTask*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataTaskDidReceiveDataBlock:'>
+<arg declared_type='void (^)(NSURLSession *, NSURLSessionDataTask *, NSData *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataTaskDidReceiveResponseBlock:'>
+<arg declared_type='NSURLSessionResponseDisposition (^)(NSURLSession *, NSURLSessionDataTask *, NSURLResponse *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSURLResponse*' type='@'/>
+<retval declared_type='NSURLSessionResponseDisposition' type='i' type64='q'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataTaskWillCacheResponseBlock:'>
+<arg declared_type='NSCachedURLResponse *(^)(NSURLSession *, NSURLSessionDataTask *, NSCachedURLResponse *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionDataTask*' type='@'/>
+<arg declared_type='NSCachedURLResponse*' type='@'/>
+<retval declared_type='NSCachedURLResponse*' type='@'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDidFinishEventsForBackgroundURLSessionBlock:'>
+<arg declared_type='void (^)(NSURLSession *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDownloadTaskDidFinishDownloadingBlock:'>
+<arg declared_type='NSURL *(^)(NSURLSession *, NSURLSessionDownloadTask *, NSURL *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionDownloadTask*' type='@'/>
+<arg declared_type='NSURL*' type='@'/>
+<retval declared_type='NSURL*' type='@'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDownloadTaskDidResumeBlock:'>
+<arg declared_type='void (^)(NSURLSession *, NSURLSessionDownloadTask *, int64_t, int64_t)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionDownloadTask*' type='@'/>
+<arg declared_type='int64_t' type='q'/>
+<arg declared_type='int64_t' type='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDownloadTaskDidWriteDataBlock:'>
+<arg declared_type='void (^)(NSURLSession *, NSURLSessionDownloadTask *, int64_t, int64_t, int64_t)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionDownloadTask*' type='@'/>
+<arg declared_type='int64_t' type='q'/>
+<arg declared_type='int64_t' type='q'/>
+<arg declared_type='int64_t' type='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReachabilityManager:'>
+<arg declared_type='AFNetworkReachabilityManager*' index='0' name='reachabilityManager' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setResponseSerializer:'>
+<arg declared_type='id' index='0' name='responseSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSecurityPolicy:'>
+<arg declared_type='AFSecurityPolicy*' index='0' name='securityPolicy' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSessionDidBecomeInvalidBlock:'>
+<arg declared_type='void (^)(NSURLSession *, NSError *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSessionDidReceiveAuthenticationChallengeBlock:'>
+<arg declared_type='NSURLSessionAuthChallengeDisposition (^)(NSURLSession *, NSURLAuthenticationChallenge *, NSURLCredential **)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLAuthenticationChallenge*' type='@'/>
+<arg declared_type='NSURLCredential**' type='^@'/>
+<retval declared_type='NSURLSessionAuthChallengeDisposition' type='i' type64='q'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTaskDidCompleteBlock:'>
+<arg declared_type='void (^)(NSURLSession *, NSURLSessionTask *, NSError *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionTask*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTaskDidReceiveAuthenticationChallengeBlock:'>
+<arg declared_type='NSURLSessionAuthChallengeDisposition (^)(NSURLSession *, NSURLSessionTask *, NSURLAuthenticationChallenge *, NSURLCredential **)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionTask*' type='@'/>
+<arg declared_type='NSURLAuthenticationChallenge*' type='@'/>
+<arg declared_type='NSURLCredential**' type='^@'/>
+<retval declared_type='NSURLSessionAuthChallengeDisposition' type='i' type64='q'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTaskDidSendBodyDataBlock:'>
+<arg declared_type='void (^)(NSURLSession *, NSURLSessionTask *, int64_t, int64_t, int64_t)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionTask*' type='@'/>
+<arg declared_type='int64_t' type='q'/>
+<arg declared_type='int64_t' type='q'/>
+<arg declared_type='int64_t' type='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTaskNeedNewBodyStreamBlock:'>
+<arg declared_type='NSInputStream *(^)(NSURLSession *, NSURLSessionTask *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionTask*' type='@'/>
+<retval declared_type='NSInputStream*' type='@'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTaskWillPerformHTTPRedirectionBlock:'>
+<arg declared_type='NSURLRequest *(^)(NSURLSession *, NSURLSessionTask *, NSURLResponse *, NSURLRequest *)' function_pointer='true' index='0' name='block' type='@?'>
+<arg declared_type='NSURLSession*' type='@'/>
+<arg declared_type='NSURLSessionTask*' type='@'/>
+<arg declared_type='NSURLResponse*' type='@'/>
+<arg declared_type='NSURLRequest*' type='@'/>
+<retval declared_type='NSURLRequest*' type='@'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tasks'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='uploadProgressForTask:'>
+<arg declared_type='NSURLSessionUploadTask*' index='0' name='uploadTask' type='@'/>
+<retval declared_type='NSProgress*' type='@'/>
+</method>
+<method selector='uploadTaskWithRequest:fromData:progress:completionHandler:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='NSData*' index='1' name='bodyData' type='@'/>
+<arg declared_type='NSProgress**' index='2' name='progress' type='^@'/>
+<arg declared_type='void (^)(NSURLResponse *, id, NSError *)' function_pointer='true' index='3' name='completionHandler' type='@?'>
+<arg declared_type='NSURLResponse*' type='@'/>
+<arg declared_type='id' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionUploadTask*' type='@'/>
+</method>
+<method selector='uploadTaskWithRequest:fromFile:progress:completionHandler:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='NSURL*' index='1' name='fileURL' type='@'/>
+<arg declared_type='NSProgress**' index='2' name='progress' type='^@'/>
+<arg declared_type='void (^)(NSURLResponse *, id, NSError *)' function_pointer='true' index='3' name='completionHandler' type='@?'>
+<arg declared_type='NSURLResponse*' type='@'/>
+<arg declared_type='id' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionUploadTask*' type='@'/>
+</method>
+<method selector='uploadTaskWithStreamedRequest:progress:completionHandler:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='NSProgress**' index='1' name='progress' type='^@'/>
+<arg declared_type='void (^)(NSURLResponse *, id, NSError *)' function_pointer='true' index='2' name='completionHandler' type='@?'>
+<arg declared_type='NSURLResponse*' type='@'/>
+<arg declared_type='id' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='NSURLSessionUploadTask*' type='@'/>
+</method>
+<method selector='uploadTasks'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</class>
+<class name='GMSAddress'>
+<method selector='addressLine1'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='addressLine2'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='administrativeArea'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='coordinate'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='country'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='lines'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='locality'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='postalCode'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='subLocality'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='thoroughfare'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='GMSCameraPosition'>
+<method selector='bearing'>
+<retval declared_type='CLLocationDirection' type='d'/>
+</method>
+<method class_method='true' selector='cameraWithLatitude:longitude:zoom:'>
+<arg declared_type='CLLocationDegrees' index='0' name='latitude' type='d'/>
+<arg declared_type='CLLocationDegrees' index='1' name='longitude' type='d'/>
+<arg declared_type='float' index='2' name='zoom' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='cameraWithLatitude:longitude:zoom:bearing:viewingAngle:'>
+<arg declared_type='CLLocationDegrees' index='0' name='latitude' type='d'/>
+<arg declared_type='CLLocationDegrees' index='1' name='longitude' type='d'/>
+<arg declared_type='float' index='2' name='zoom' type='f'/>
+<arg declared_type='CLLocationDirection' index='3' name='bearing' type='d'/>
+<arg declared_type='double' index='4' name='viewingAngle' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='cameraWithTarget:zoom:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='target' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='float' index='1' name='zoom' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='cameraWithTarget:zoom:bearing:viewingAngle:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='target' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='float' index='1' name='zoom' type='f'/>
+<arg declared_type='CLLocationDirection' index='2' name='bearing' type='d'/>
+<arg declared_type='double' index='3' name='viewingAngle' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithTarget:zoom:bearing:viewingAngle:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='target' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='float' index='1' name='zoom' type='f'/>
+<arg declared_type='CLLocationDirection' index='2' name='bearing' type='d'/>
+<arg declared_type='double' index='3' name='viewingAngle' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='target'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='viewingAngle'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='zoom'>
+<retval declared_type='float' type='f'/>
+</method>
+<method class_method='true' selector='zoomAtCoordinate:forMeters:perPoints:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationDistance' index='1' name='meters' type='d'/>
+<arg declared_type='CGFloat' index='2' name='points' type='f' type64='d'/>
+<retval declared_type='float' type='f'/>
+</method>
+</class>
+<class name='GMSCameraUpdate'>
+<method class_method='true' selector='fitBounds:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='bounds' type='@'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='fitBounds:withEdgeInsets:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='bounds' type='@'/>
+<arg declared_type='UIEdgeInsets' index='1' name='edgeInsets' type='{UIEdgeInsets=ffff}' type64='{UIEdgeInsets=dddd}'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='fitBounds:withPadding:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='bounds' type='@'/>
+<arg declared_type='CGFloat' index='1' name='padding' type='f' type64='d'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='scrollByX:Y:'>
+<arg declared_type='CGFloat' index='0' name='dX' type='f' type64='d'/>
+<arg declared_type='CGFloat' index='1' name='dY' type='f' type64='d'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='setCamera:'>
+<arg declared_type='GMSCameraPosition*' index='0' name='camera' type='@'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='setTarget:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='target' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='setTarget:zoom:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='target' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='float' index='1' name='zoom' type='f'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='zoomBy:'>
+<arg declared_type='float' index='0' name='delta' type='f'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='zoomBy:atPoint:'>
+<arg declared_type='float' index='0' name='zoom' type='f'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='zoomIn'>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='zoomOut'>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='zoomTo:'>
+<arg declared_type='float' index='0' name='zoom' type='f'/>
+<retval declared_type='GMSCameraUpdate*' type='@'/>
+</method>
+</class>
+<class name='GMSCircle'>
+<method class_method='true' selector='circleWithPosition:radius:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='position' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationDistance' index='1' name='radius' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='fillColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='position'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='radius'>
+<retval declared_type='CLLocationDistance' type='d'/>
+</method>
+<method selector='setFillColor:'>
+<arg declared_type='UIColor*' index='0' name='fillColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPosition:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='position' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRadius:'>
+<arg declared_type='CLLocationDistance' index='0' name='radius' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStrokeColor:'>
+<arg declared_type='UIColor*' index='0' name='strokeColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStrokeWidth:'>
+<arg declared_type='CGFloat' index='0' name='strokeWidth' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='strokeColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='strokeWidth'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+</class>
+<class name='GMSCoordinateBounds'>
+<method selector='containsCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='includingBounds:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='other' type='@'/>
+<retval declared_type='GMSCoordinateBounds*' type='@'/>
+</method>
+<method selector='includingCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='GMSCoordinateBounds*' type='@'/>
+</method>
+<method selector='includingPath:'>
+<arg declared_type='GMSPath*' index='0' name='path' type='@'/>
+<retval declared_type='GMSCoordinateBounds*' type='@'/>
+</method>
+<method selector='initWithCoordinate:coordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coord1' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coord2' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithPath:'>
+<arg declared_type='GMSPath*' index='0' name='path' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithRegion:'>
+<arg declared_type='id' index='0' name='region' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='intersectsBounds:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='other' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isValid'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='northEast'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='southWest'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+</class>
+<class name='GMSGeocoder'>
+<method class_method='true' selector='geocoder'>
+<retval declared_type='GMSGeocoder*' type='@'/>
+</method>
+<method selector='reverseGeocodeCoordinate:completionHandler:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='GMSReverseGeocodeCallback' function_pointer='true' index='1' name='handler' type='@?'>
+<arg declared_type='GMSReverseGeocodeResponse*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSGroundOverlay'>
+<method selector='anchor'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='bearing'>
+<retval declared_type='CLLocationDirection' type='d'/>
+</method>
+<method selector='bounds'>
+<retval declared_type='GMSCoordinateBounds*' type='@'/>
+</method>
+<method class_method='true' selector='groundOverlayWithBounds:icon:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='bounds' type='@'/>
+<arg declared_type='UIImage*' index='1' name='icon' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='groundOverlayWithPosition:icon:zoomLevel:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='position' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='UIImage*' index='1' name='icon' type='@'/>
+<arg declared_type='CGFloat' index='2' name='zoomLevel' type='f' type64='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='icon'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='position'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='setAnchor:'>
+<arg declared_type='CGPoint' index='0' name='anchor' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBearing:'>
+<arg declared_type='CLLocationDirection' index='0' name='bearing' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBounds:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='bounds' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIcon:'>
+<arg declared_type='UIImage*' index='0' name='icon' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPosition:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='position' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSIndoorBuilding'>
+<method selector='defaultLevelIndex'>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='isUnderground'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='levels'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='setLevels:'>
+<arg declared_type='NSArray*' index='0' name='levels' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSIndoorDisplay'>
+<method selector='activeBuilding'>
+<retval declared_type='GMSIndoorBuilding*' type='@'/>
+</method>
+<method selector='activeLevel'>
+<retval declared_type='GMSIndoorLevel*' type='@'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setActiveBuilding:'>
+<arg declared_type='GMSIndoorBuilding*' index='0' name='activeBuilding' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setActiveLevel:'>
+<arg declared_type='GMSIndoorLevel*' index='0' name='activeLevel' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg declared_type='id' index='0' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSIndoorLevel'>
+<method selector='name'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='shortName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='GMSMapLayer'>
+<method selector='cameraBearing'>
+<retval declared_type='CLLocationDirection' type='d'/>
+</method>
+<method selector='cameraLatitude'>
+<retval declared_type='CLLocationDegrees' type='d'/>
+</method>
+<method selector='cameraLongitude'>
+<retval declared_type='CLLocationDegrees' type='d'/>
+</method>
+<method selector='cameraViewingAngle'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='cameraZoomLevel'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='setCameraBearing:'>
+<arg declared_type='CLLocationDirection' index='0' name='cameraBearing' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraLatitude:'>
+<arg declared_type='CLLocationDegrees' index='0' name='cameraLatitude' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraLongitude:'>
+<arg declared_type='CLLocationDegrees' index='0' name='cameraLongitude' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraViewingAngle:'>
+<arg declared_type='double' index='0' name='cameraViewingAngle' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraZoomLevel:'>
+<arg declared_type='float' index='0' name='cameraZoomLevel' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSMapView'>
+<method selector='accessibilityElementsHidden'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='camera'>
+<retval declared_type='GMSCameraPosition*' type='@'/>
+</method>
+<method selector='cameraForBounds:insets:'>
+<arg declared_type='GMSCoordinateBounds*' index='0' name='bounds' type='@'/>
+<arg declared_type='UIEdgeInsets' index='1' name='insets' type='{UIEdgeInsets=ffff}' type64='{UIEdgeInsets=dddd}'/>
+<retval declared_type='GMSCameraPosition*' type='@'/>
+</method>
+<method selector='clear'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='indoorDisplay'>
+<retval declared_type='GMSIndoorDisplay*' type='@'/>
+</method>
+<method selector='isBuildingsEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isIndoorEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isMyLocationEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isTrafficEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='layer'>
+<retval declared_type='GMSMapLayer*' type='@'/>
+</method>
+<method selector='mapType'>
+<retval declared_type='GMSMapViewType' type='i'/>
+</method>
+<method class_method='true' selector='mapWithFrame:camera:'>
+<arg declared_type='CGRect' index='0' name='frame' type='{CGRect={CGPoint=ff}{CGSize=ff}}' type64='{CGRect={CGPoint=dd}{CGSize=dd}}'/>
+<arg declared_type='GMSCameraPosition*' index='1' name='camera' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='maxZoom'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='minZoom'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='moveCamera:'>
+<arg declared_type='GMSCameraUpdate*' index='0' name='update' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='myLocation'>
+<retval declared_type='CLLocation*' type='@'/>
+</method>
+<method selector='padding'>
+<retval declared_type='UIEdgeInsets' type='{UIEdgeInsets=ffff}' type64='{UIEdgeInsets=dddd}'/>
+</method>
+<method selector='projection'>
+<retval declared_type='GMSProjection*' type='@'/>
+</method>
+<method selector='selectedMarker'>
+<retval declared_type='GMSMarker*' type='@'/>
+</method>
+<method selector='setAccessibilityElementsHidden:'>
+<arg declared_type='BOOL' index='0' name='accessibilityElementsHidden' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBuildingsEnabled:'>
+<arg declared_type='BOOL' index='0' name='buildingsEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCamera:'>
+<arg declared_type='GMSCameraPosition*' index='0' name='camera' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg declared_type='id' index='0' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIndoorDisplay:'>
+<arg declared_type='GMSIndoorDisplay*' index='0' name='indoorDisplay' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIndoorEnabled:'>
+<arg declared_type='BOOL' index='0' name='indoorEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMapType:'>
+<arg declared_type='GMSMapViewType' index='0' name='mapType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinZoom:maxZoom:'>
+<arg declared_type='float' index='0' name='minZoom' type='f'/>
+<arg declared_type='float' index='1' name='maxZoom' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMyLocation:'>
+<arg declared_type='CLLocation*' index='0' name='myLocation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMyLocationEnabled:'>
+<arg declared_type='BOOL' index='0' name='myLocationEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPadding:'>
+<arg declared_type='UIEdgeInsets' index='0' name='padding' type='{UIEdgeInsets=ffff}' type64='{UIEdgeInsets=dddd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSelectedMarker:'>
+<arg declared_type='GMSMarker*' index='0' name='selectedMarker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSettings:'>
+<arg declared_type='int*' index='0' name='settings' type='^i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTrafficEnabled:'>
+<arg declared_type='BOOL' index='0' name='trafficEnabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='settings'>
+<retval declared_type='int*' type='^i'/>
+</method>
+<method selector='startRendering'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stopRendering'>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSMarker'>
+<method selector='appearAnimation'>
+<retval declared_type='GMSMarkerAnimation' type='i'/>
+</method>
+<method selector='groundAnchor'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='icon'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='infoWindowAnchor'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='isDraggable'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isFlat'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='layer'>
+<retval declared_type='GMSMarkerLayer*' type='@'/>
+</method>
+<method class_method='true' selector='markerImageWithColor:'>
+<arg declared_type='UIColor*' index='0' name='color' type='@'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method class_method='true' selector='markerWithPosition:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='position' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='opacity'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='panoramaView'>
+<retval declared_type='GMSPanoramaView*' type='@'/>
+</method>
+<method selector='position'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='rotation'>
+<retval declared_type='CLLocationDegrees' type='d'/>
+</method>
+<method selector='setAppearAnimation:'>
+<arg declared_type='GMSMarkerAnimation' index='0' name='appearAnimation' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDraggable:'>
+<arg declared_type='BOOL' index='0' name='draggable' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFlat:'>
+<arg declared_type='BOOL' index='0' name='flat' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGroundAnchor:'>
+<arg declared_type='CGPoint' index='0' name='groundAnchor' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIcon:'>
+<arg declared_type='UIImage*' index='0' name='icon' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInfoWindowAnchor:'>
+<arg declared_type='CGPoint' index='0' name='infoWindowAnchor' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLayer:'>
+<arg declared_type='GMSMarkerLayer*' index='0' name='layer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOpacity:'>
+<arg declared_type='float' index='0' name='opacity' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPanoramaView:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='panoramaView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPosition:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='position' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRotation:'>
+<arg declared_type='CLLocationDegrees' index='0' name='rotation' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSnippet:'>
+<arg declared_type='NSString*' index='0' name='snippet' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUserData:'>
+<arg declared_type='id' index='0' name='userData' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='snippet'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='userData'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='GMSMarkerLayer'>
+<method selector='latitude'>
+<retval declared_type='CLLocationDegrees' type='d'/>
+</method>
+<method selector='longitude'>
+<retval declared_type='CLLocationDegrees' type='d'/>
+</method>
+<method selector='opacity'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='rotation'>
+<retval declared_type='CLLocationDegrees' type='d'/>
+</method>
+<method selector='setLatitude:'>
+<arg declared_type='CLLocationDegrees' index='0' name='latitude' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLongitude:'>
+<arg declared_type='CLLocationDegrees' index='0' name='longitude' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOpacity:'>
+<arg declared_type='float' index='0' name='opacity' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRotation:'>
+<arg declared_type='CLLocationDegrees' index='0' name='rotation' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSMutableCameraPosition'>
+<method selector='bearing'>
+<retval declared_type='CLLocationDirection' type='d'/>
+</method>
+<method selector='setBearing:'>
+<arg declared_type='CLLocationDirection' index='0' name='bearing' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTarget:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='target' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setViewingAngle:'>
+<arg declared_type='double' index='0' name='viewingAngle' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZoom:'>
+<arg declared_type='float' index='0' name='zoom' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='target'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='viewingAngle'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='zoom'>
+<retval declared_type='float' type='f'/>
+</method>
+</class>
+<class name='GMSMutablePath'>
+<method selector='addCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coord' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addLatitude:longitude:'>
+<arg declared_type='CLLocationDegrees' index='0' name='latitude' type='d'/>
+<arg declared_type='CLLocationDegrees' index='1' name='longitude' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='insertCoordinate:atIndex:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coord' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='NSUInteger' index='1' name='index' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeAllCoordinates'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeCoordinateAtIndex:'>
+<arg declared_type='NSUInteger' index='0' name='index' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeLastCoordinate'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='replaceCoordinateAtIndex:withCoordinate:'>
+<arg declared_type='NSUInteger' index='0' name='index' type='I' type64='Q'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coord' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSOverlay'>
+<method selector='isTappable'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='map'>
+<retval declared_type='GMSMapView*' type='@'/>
+</method>
+<method selector='setMap:'>
+<arg declared_type='GMSMapView*' index='0' name='map' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTappable:'>
+<arg declared_type='BOOL' index='0' name='tappable' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitle:'>
+<arg declared_type='NSString*' index='0' name='title' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZIndex:'>
+<arg declared_type='int' index='0' name='zIndex' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='title'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='zIndex'>
+<retval declared_type='int' type='i'/>
+</method>
+</class>
+<class name='GMSPanorama'>
+<method selector='coordinate'>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='links'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='panoramaID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='GMSPanoramaCamera'>
+<method selector='FOV'>
+<retval declared_type='double' type='d'/>
+</method>
+<method class_method='true' selector='cameraWithHeading:pitch:zoom:'>
+<arg declared_type='CLLocationDirection' index='0' name='heading' type='d'/>
+<arg declared_type='double' index='1' name='pitch' type='d'/>
+<arg declared_type='float' index='2' name='zoom' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='cameraWithHeading:pitch:zoom:FOV:'>
+<arg declared_type='CLLocationDirection' index='0' name='heading' type='d'/>
+<arg declared_type='double' index='1' name='pitch' type='d'/>
+<arg declared_type='float' index='2' name='zoom' type='f'/>
+<arg declared_type='double' index='3' name='FOV' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='cameraWithOrientation:zoom:'>
+<arg declared_type='GMSOrientation' index='0' name='orientation' type='{_GMSOrientation=dd}'/>
+<arg declared_type='float' index='1' name='zoom' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='cameraWithOrientation:zoom:FOV:'>
+<arg declared_type='GMSOrientation' index='0' name='orientation' type='{_GMSOrientation=dd}'/>
+<arg declared_type='float' index='1' name='zoom' type='f'/>
+<arg declared_type='double' index='2' name='FOV' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithOrientation:zoom:FOV:'>
+<arg declared_type='GMSOrientation' index='0' name='orientation' type='{_GMSOrientation=dd}'/>
+<arg declared_type='float' index='1' name='zoom' type='f'/>
+<arg declared_type='double' index='2' name='FOV' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='orientation'>
+<retval declared_type='GMSOrientation' type='{_GMSOrientation=dd}'/>
+</method>
+<method selector='zoom'>
+<retval declared_type='float' type='f'/>
+</method>
+</class>
+<class name='GMSPanoramaCameraUpdate'>
+<method class_method='true' selector='rotateBy:'>
+<arg declared_type='CGFloat' index='0' name='deltaHeading' type='f' type64='d'/>
+<retval declared_type='GMSPanoramaCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='setHeading:'>
+<arg declared_type='CGFloat' index='0' name='heading' type='f' type64='d'/>
+<retval declared_type='GMSPanoramaCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='setPitch:'>
+<arg declared_type='CGFloat' index='0' name='pitch' type='f' type64='d'/>
+<retval declared_type='GMSPanoramaCameraUpdate*' type='@'/>
+</method>
+<method class_method='true' selector='setZoom:'>
+<arg declared_type='CGFloat' index='0' name='zoom' type='f' type64='d'/>
+<retval declared_type='GMSPanoramaCameraUpdate*' type='@'/>
+</method>
+</class>
+<class name='GMSPanoramaLayer'>
+<method selector='cameraFOV'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='cameraHeading'>
+<retval declared_type='CLLocationDirection' type='d'/>
+</method>
+<method selector='cameraPitch'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='cameraZoom'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='setCameraFOV:'>
+<arg declared_type='double' index='0' name='cameraFOV' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraHeading:'>
+<arg declared_type='CLLocationDirection' index='0' name='cameraHeading' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraPitch:'>
+<arg declared_type='double' index='0' name='cameraPitch' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCameraZoom:'>
+<arg declared_type='float' index='0' name='cameraZoom' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSPanoramaLink'>
+<method selector='heading'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='panoramaID'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setHeading:'>
+<arg declared_type='CGFloat' index='0' name='heading' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPanoramaID:'>
+<arg declared_type='NSString*' index='0' name='panoramaID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSPanoramaService'>
+<method selector='requestPanoramaNearCoordinate:callback:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='GMSPanoramaCallback' function_pointer='true' index='1' name='callback' type='@?'>
+<arg declared_type='GMSPanorama*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='requestPanoramaNearCoordinate:radius:callback:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='NSUInteger' index='1' name='radius' type='I' type64='Q'/>
+<arg declared_type='GMSPanoramaCallback' function_pointer='true' index='2' name='callback' type='@?'>
+<arg declared_type='GMSPanorama*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='requestPanoramaWithID:callback:'>
+<arg declared_type='NSString*' index='0' name='panoramaID' type='@'/>
+<arg declared_type='GMSPanoramaCallback' function_pointer='true' index='1' name='callback' type='@?'>
+<arg declared_type='GMSPanorama*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='GMSPanoramaView'>
+<method selector='animateToCamera:animationDuration:'>
+<arg declared_type='GMSPanoramaCamera*' index='0' name='camera' type='@'/>
+<arg declared_type='NSTimeInterval' index='1' name='duration' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='camera'>
+<retval declared_type='GMSPanoramaCamera*' type='@'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='layer'>
+<retval declared_type='GMSPanoramaLayer*' type='@'/>
+</method>
+<method selector='moveNearCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='moveNearCoordinate:radius:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='NSUInteger' index='1' name='radius' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='moveToPanoramaID:'>
+<arg declared_type='NSString*' index='0' name='panoramaID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='navigationGestures'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='navigationLinksHidden'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='orientationForPoint:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='GMSOrientation' type='{_GMSOrientation=dd}'/>
+</method>
+<method selector='orientationGestures'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='panorama'>
+<retval declared_type='GMSPanorama*' type='@'/>
+</method>
+<method class_method='true' selector='panoramaWithFrame:nearCoordinate:'>
+<arg declared_type='CGRect' index='0' name='frame' type='{CGRect={CGPoint=ff}{CGSize=ff}}' type64='{CGRect={CGPoint=dd}{CGSize=dd}}'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='panoramaWithFrame:nearCoordinate:radius:'>
+<arg declared_type='CGRect' index='0' name='frame' type='{CGRect={CGPoint=ff}{CGSize=ff}}' type64='{CGRect={CGPoint=dd}{CGSize=dd}}'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<arg declared_type='NSUInteger' index='2' name='radius' type='I' type64='Q'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='pointForOrientation:'>
+<arg declared_type='GMSOrientation' index='0' name='orientation' type='{_GMSOrientation=dd}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='setAllGesturesEnabled:'>
+<arg declared_type='BOOL' index='0' name='enabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCamera:'>
+<arg declared_type='GMSPanoramaCamera*' index='0' name='camera' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg declared_type='id' index='0' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNavigationGestures:'>
+<arg declared_type='BOOL' index='0' name='navigationGestures' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNavigationLinksHidden:'>
+<arg declared_type='BOOL' index='0' name='navigationLinksHidden' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOrientationGestures:'>
+<arg declared_type='BOOL' index='0' name='orientationGestures' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPanorama:'>
+<arg declared_type='GMSPanorama*' index='0' name='panorama' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStreetNamesHidden:'>
+<arg declared_type='BOOL' index='0' name='streetNamesHidden' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZoomGestures:'>
+<arg declared_type='BOOL' index='0' name='zoomGestures' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='streetNamesHidden'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='updateCamera:animationDuration:'>
+<arg declared_type='GMSPanoramaCameraUpdate*' index='0' name='cameraUpdate' type='@'/>
+<arg declared_type='NSTimeInterval' index='1' name='duration' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='zoomGestures'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='GMSPath'>
+<method selector='coordinateAtIndex:'>
+<arg declared_type='NSUInteger' index='0' name='index' type='I' type64='Q'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='count'>
+<retval declared_type='NSUInteger' type='I' type64='Q'/>
+</method>
+<method selector='encodedPath'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='initWithPath:'>
+<arg declared_type='GMSPath*' index='0' name='path' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='lengthOfKind:'>
+<arg declared_type='GMSLengthKind' index='0' name='kind' type='i'/>
+<retval declared_type='CLLocationDistance' type='d'/>
+</method>
+<method class_method='true' selector='path'>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='pathFromEncodedPath:'>
+<arg declared_type='NSString*' index='0' name='encodedPath' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='pathOffsetByLatitude:longitude:'>
+<arg declared_type='CLLocationDegrees' index='0' name='deltaLatitude' type='d'/>
+<arg declared_type='CLLocationDegrees' index='1' name='deltaLongitude' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='segmentsForLength:kind:'>
+<arg declared_type='CLLocationDistance' index='0' name='length' type='d'/>
+<arg declared_type='GMSLengthKind' index='1' name='kind' type='i'/>
+<retval declared_type='double' type='d'/>
+</method>
+</class>
+<class name='GMSPolygon'>
+<method selector='fillColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='geodesic'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='path'>
+<retval declared_type='GMSPath*' type='@'/>
+</method>
+<method class_method='true' selector='polygonWithPath:'>
+<arg declared_type='GMSPath*' index='0' name='path' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setFillColor:'>
+<arg declared_type='UIColor*' index='0' name='fillColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGeodesic:'>
+<arg declared_type='BOOL' index='0' name='geodesic' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPath:'>
+<arg declared_type='GMSPath*' index='0' name='path' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStrokeColor:'>
+<arg declared_type='UIColor*' index='0' name='strokeColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStrokeWidth:'>
+<arg declared_type='CGFloat' index='0' name='strokeWidth' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='strokeColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='strokeWidth'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+</class>
+<class name='GMSPolyline'>
+<method selector='geodesic'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='path'>
+<retval declared_type='GMSPath*' type='@'/>
+</method>
+<method class_method='true' selector='polylineWithPath:'>
+<arg declared_type='GMSPath*' index='0' name='path' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setGeodesic:'>
+<arg declared_type='BOOL' index='0' name='geodesic' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPath:'>
+<arg declared_type='GMSPath*' index='0' name='path' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSpans:'>
+<arg declared_type='NSArray*' index='0' name='spans' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStrokeColor:'>
+<arg declared_type='UIColor*' index='0' name='strokeColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStrokeWidth:'>
+<arg declared_type='CGFloat' index='0' name='strokeWidth' type='f' type64='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='spans'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='strokeColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='strokeWidth'>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+</class>
+<class name='GMSProjection'>
+<method selector='containsCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='coordinateForPoint:'>
+<arg declared_type='CGPoint' index='0' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='CLLocationCoordinate2D' type='{_CLLocationCoordinate2D=dd}'/>
+</method>
+<method selector='pointForCoordinate:'>
+<arg declared_type='CLLocationCoordinate2D' index='0' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+</method>
+<method selector='pointsForMeters:atCoordinate:'>
+<arg declared_type='CLLocationDistance' index='0' name='meters' type='d'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='CGFloat' type='f' type64='d'/>
+</method>
+<method selector='visibleRegion'>
+<retval declared_type='GMSVisibleRegion' type='{_GMSVisibleRegion={?=dd}{?=dd}{?=dd}{?=dd}}'/>
+</method>
+</class>
+<class name='GMSReverseGeocodeResponse'>
+<method selector='firstResult'>
+<retval declared_type='GMSAddress*' type='@'/>
+</method>
+<method selector='results'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</class>
+<class name='GMSServices'>
+<method class_method='true' selector='SDKVersion'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method class_method='true' selector='openSourceLicenseInfo'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method class_method='true' selector='provideAPIKey:'>
+<arg declared_type='NSString*' index='0' name='APIKey' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='sharedServices'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='GMSStrokeStyle'>
+<method class_method='true' selector='gradientFromColor:toColor:'>
+<arg declared_type='UIColor*' index='0' name='fromColor' type='@'/>
+<arg declared_type='UIColor*' index='1' name='toColor' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='solidColor:'>
+<arg declared_type='UIColor*' index='0' name='color' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='GMSStyleSpan'>
+<method selector='segments'>
+<retval declared_type='double' type='d'/>
+</method>
+<method class_method='true' selector='spanWithColor:'>
+<arg declared_type='UIColor*' index='0' name='color' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='spanWithColor:segments:'>
+<arg declared_type='UIColor*' index='0' name='color' type='@'/>
+<arg declared_type='double' index='1' name='segments' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='spanWithStyle:'>
+<arg declared_type='GMSStrokeStyle*' index='0' name='style' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method class_method='true' selector='spanWithStyle:segments:'>
+<arg declared_type='GMSStrokeStyle*' index='0' name='style' type='@'/>
+<arg declared_type='double' index='1' name='segments' type='d'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='style'>
+<retval declared_type='GMSStrokeStyle*' type='@'/>
+</method>
+</class>
+<class name='GMSSyncTileLayer'>
+<method selector='tileForX:y:zoom:'>
+<arg declared_type='NSUInteger' index='0' name='x' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='1' name='y' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='2' name='zoom' type='I' type64='Q'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+</class>
+<class name='GMSTileLayer'>
+<method selector='clearTileCache'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fadeIn'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='map'>
+<retval declared_type='GMSMapView*' type='@'/>
+</method>
+<method selector='opacity'>
+<retval declared_type='float' type='f'/>
+</method>
+<method selector='requestTileForX:y:zoom:receiver:'>
+<arg declared_type='NSUInteger' index='0' name='x' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='1' name='y' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='2' name='zoom' type='I' type64='Q'/>
+<arg declared_type='id' index='3' name='receiver' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFadeIn:'>
+<arg declared_type='BOOL' index='0' name='fadeIn' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMap:'>
+<arg declared_type='GMSMapView*' index='0' name='map' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOpacity:'>
+<arg declared_type='float' index='0' name='opacity' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTileSize:'>
+<arg declared_type='NSInteger' index='0' name='tileSize' type='i' type64='q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZIndex:'>
+<arg declared_type='int' index='0' name='zIndex' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tileSize'>
+<retval declared_type='NSInteger' type='i' type64='q'/>
+</method>
+<method selector='zIndex'>
+<retval declared_type='int' type='i'/>
+</method>
+</class>
+<class name='GMSUISettings'>
+<method selector='compassButton'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='consumesGesturesInView'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='indoorPicker'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='myLocationButton'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='rotateGestures'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='scrollGestures'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setAllGesturesEnabled:'>
+<arg declared_type='BOOL' index='0' name='enabled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCompassButton:'>
+<arg declared_type='BOOL' index='0' name='compassButton' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConsumesGesturesInView:'>
+<arg declared_type='BOOL' index='0' name='consumesGesturesInView' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIndoorPicker:'>
+<arg declared_type='BOOL' index='0' name='indoorPicker' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMyLocationButton:'>
+<arg declared_type='BOOL' index='0' name='myLocationButton' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRotateGestures:'>
+<arg declared_type='BOOL' index='0' name='rotateGestures' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScrollGestures:'>
+<arg declared_type='BOOL' index='0' name='scrollGestures' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTiltGestures:'>
+<arg declared_type='BOOL' index='0' name='tiltGestures' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setZoomGestures:'>
+<arg declared_type='BOOL' index='0' name='zoomGestures' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tiltGestures'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='zoomGestures'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='GMSURLTileLayer'>
+<method selector='setUserAgent:'>
+<arg declared_type='NSString*' index='0' name='userAgent' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='tileLayerWithURLConstructor:'>
+<arg declared_type='GMSTileURLConstructor' function_pointer='true' index='0' name='constructor' type='@?'>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<retval declared_type='NSURL*' type='@'/>
+</arg>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='userAgent'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='appendPartWithFileData:name:fileName:mimeType:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSString*' index='2' name='fileName' type='@'/>
+<arg declared_type='NSString*' index='3' name='mimeType' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='appendPartWithFileURL:name:error:'>
+<arg declared_type='NSURL*' index='0' name='fileURL' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSError**' index='2' name='error' type='^@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='appendPartWithFileURL:name:fileName:mimeType:error:'>
+<arg declared_type='NSURL*' index='0' name='fileURL' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSString*' index='2' name='fileName' type='@'/>
+<arg declared_type='NSString*' index='3' name='mimeType' type='@'/>
+<arg declared_type='NSError**' index='4' name='error' type='^@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='appendPartWithFormData:name:'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='appendPartWithHeaders:body:'>
+<arg declared_type='NSDictionary*' index='0' name='headers' type='@'/>
+<arg declared_type='NSData*' index='1' name='body' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='appendPartWithInputStream:name:fileName:length:mimeType:'>
+<arg declared_type='NSInputStream*' index='0' name='inputStream' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSString*' index='2' name='fileName' type='@'/>
+<arg declared_type='int64_t' index='3' name='length' type='q'/>
+<arg declared_type='NSString*' index='4' name='mimeType' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cacheImage:forRequest:'>
+<arg declared_type='UIImage*' index='0' name='image' type='@'/>
+<arg declared_type='NSURLRequest*' index='1' name='request' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cachedImageForRequest:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='didChangeActiveBuilding:'>
+<arg declared_type='GMSIndoorBuilding*' index='0' name='building' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='didChangeActiveLevel:'>
+<arg declared_type='GMSIndoorLevel*' index='0' name='level' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='didTapMyLocationButtonForMapView:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mapView:didBeginDraggingMarker:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didChangeCameraPosition:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSCameraPosition*' index='1' name='position' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didDragMarker:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didEndDraggingMarker:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didLongPressAtCoordinate:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didTapAtCoordinate:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didTapInfoWindowOfMarker:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didTapMarker:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mapView:didTapOverlay:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSOverlay*' index='1' name='overlay' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:idleAtCameraPosition:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSCameraPosition*' index='1' name='position' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:markerInfoContents:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='mapView:markerInfoWindow:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='mapView:willMove:'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='BOOL' index='1' name='gesture' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didMoveCamera:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='panoramaView' type='@'/>
+<arg declared_type='GMSPanoramaCamera*' index='1' name='camera' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didMoveToPanorama:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='GMSPanorama*' index='1' name='panorama' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didMoveToPanorama:nearCoordinate:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='GMSPanorama*' index='1' name='panorama' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='2' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didTap:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='panoramaView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didTapMarker:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='panoramaView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='panoramaView:error:onMoveNearCoordinate:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='NSError*' index='1' name='error' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='2' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:error:onMoveToPanoramaID:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='NSError*' index='1' name='error' type='@'/>
+<arg declared_type='NSString*' index='2' name='panoramaID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:willMoveToPanoramaID:'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='NSString*' index='1' name='panoramaID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='receiveTileWithX:y:zoom:image:'>
+<arg declared_type='NSUInteger' index='0' name='x' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='1' name='y' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='2' name='zoom' type='I' type64='Q'/>
+<arg declared_type='UIImage*' index='3' name='image' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='requestBySerializingRequest:withParameters:error:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='NSError**' index='2' name='error' type='^@'/>
+<retval declared_type='NSURLRequest*' type='@'/>
+</method>
+<method selector='responseObjectForResponse:data:error:'>
+<arg declared_type='NSURLResponse*' index='0' name='response' type='@'/>
+<arg declared_type='NSData*' index='1' name='data' type='@'/>
+<arg declared_type='NSError**' index='2' name='error' type='^@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='throttleBandwidthWithPacketSize:delay:'>
+<arg declared_type='NSUInteger' index='0' name='numberOfBytes' type='I' type64='Q'/>
+<arg declared_type='NSTimeInterval' index='1' name='delay' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIActivityIndicatorView'>
+<method selector='setAnimatingWithStateOfOperation:'>
+<arg declared_type='AFURLConnectionOperation*' index='0' name='operation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAnimatingWithStateOfTask:'>
+<arg declared_type='NSURLSessionTask*' index='0' name='task' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIAlertView'>
+<method class_method='true' selector='showAlertViewForRequestOperationWithErrorOnCompletion:delegate:'>
+<arg declared_type='AFURLConnectionOperation*' index='0' name='operation' type='@'/>
+<arg declared_type='id' index='1' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showAlertViewForRequestOperationWithErrorOnCompletion:delegate:cancelButtonTitle:otherButtonTitles:' sentinel='0' variadic='true'>
+<arg declared_type='AFURLConnectionOperation*' index='0' name='operation' type='@'/>
+<arg declared_type='id' index='1' name='delegate' type='@'/>
+<arg declared_type='NSString*' index='2' name='cancelButtonTitle' type='@'/>
+<arg declared_type='NSString*' index='3' name='otherButtonTitles' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showAlertViewForTaskWithErrorOnCompletion:delegate:'>
+<arg declared_type='NSURLSessionTask*' index='0' name='task' type='@'/>
+<arg declared_type='id' index='1' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showAlertViewForTaskWithErrorOnCompletion:delegate:cancelButtonTitle:otherButtonTitles:' sentinel='0' variadic='true'>
+<arg declared_type='NSURLSessionTask*' index='0' name='task' type='@'/>
+<arg declared_type='id' index='1' name='delegate' type='@'/>
+<arg declared_type='NSString*' index='2' name='cancelButtonTitle' type='@'/>
+<arg declared_type='NSString*' index='3' name='otherButtonTitles' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIButton'>
+<method selector='cancelBackgroundImageRequestOperation'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cancelImageRequestOperation'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBackgroundImageForState:withURL:'>
+<arg declared_type='UIControlState' index='0' name='state' type='I' type64='Q'/>
+<arg declared_type='NSURL*' index='1' name='url' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBackgroundImageForState:withURL:placeholderImage:'>
+<arg declared_type='UIControlState' index='0' name='state' type='I' type64='Q'/>
+<arg declared_type='NSURL*' index='1' name='url' type='@'/>
+<arg declared_type='UIImage*' index='2' name='placeholderImage' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBackgroundImageForState:withURLRequest:placeholderImage:success:failure:'>
+<arg declared_type='UIControlState' index='0' name='state' type='I' type64='Q'/>
+<arg declared_type='NSURLRequest*' index='1' name='urlRequest' type='@'/>
+<arg declared_type='UIImage*' index='2' name='placeholderImage' type='@'/>
+<arg declared_type='void (^)(NSHTTPURLResponse *, UIImage *)' function_pointer='true' index='3' name='success' type='@?'>
+<arg declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='UIImage*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='4' name='failure' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageForState:withURL:'>
+<arg declared_type='UIControlState' index='0' name='state' type='I' type64='Q'/>
+<arg declared_type='NSURL*' index='1' name='url' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageForState:withURL:placeholderImage:'>
+<arg declared_type='UIControlState' index='0' name='state' type='I' type64='Q'/>
+<arg declared_type='NSURL*' index='1' name='url' type='@'/>
+<arg declared_type='UIImage*' index='2' name='placeholderImage' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageForState:withURLRequest:placeholderImage:success:failure:'>
+<arg declared_type='UIControlState' index='0' name='state' type='I' type64='Q'/>
+<arg declared_type='NSURLRequest*' index='1' name='urlRequest' type='@'/>
+<arg declared_type='UIImage*' index='2' name='placeholderImage' type='@'/>
+<arg declared_type='void (^)(NSHTTPURLResponse *, UIImage *)' function_pointer='true' index='3' name='success' type='@?'>
+<arg declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='UIImage*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='4' name='failure' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIImageView'>
+<method selector='cancelImageRequestOperation'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='imageResponseSerializer'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setImageResponseSerializer:'>
+<arg declared_type='id' index='0' name='imageResponseSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageWithURL:'>
+<arg declared_type='NSURL*' index='0' name='url' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageWithURL:placeholderImage:'>
+<arg declared_type='NSURL*' index='0' name='url' type='@'/>
+<arg declared_type='UIImage*' index='1' name='placeholderImage' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageWithURLRequest:placeholderImage:success:failure:'>
+<arg declared_type='NSURLRequest*' index='0' name='urlRequest' type='@'/>
+<arg declared_type='UIImage*' index='1' name='placeholderImage' type='@'/>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSURLRequest*' type='@'/>
+<arg declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='UIImage*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSURLRequest*' type='@'/>
+<arg declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='setSharedImageCache:'>
+<arg declared_type='id' index='0' name='imageCache' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='sharedImageCache'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='UIProgressView'>
+<method selector='setProgressWithDownloadProgressOfOperation:animated:'>
+<arg declared_type='AFURLConnectionOperation*' index='0' name='operation' type='@'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setProgressWithDownloadProgressOfTask:animated:'>
+<arg declared_type='NSURLSessionDownloadTask*' index='0' name='task' type='@'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setProgressWithUploadProgressOfOperation:animated:'>
+<arg declared_type='AFURLConnectionOperation*' index='0' name='operation' type='@'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setProgressWithUploadProgressOfTask:animated:'>
+<arg declared_type='NSURLSessionUploadTask*' index='0' name='task' type='@'/>
+<arg declared_type='BOOL' index='1' name='animated' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIRefreshControl'>
+<method selector='setRefreshingWithStateOfOperation:'>
+<arg declared_type='AFURLConnectionOperation*' index='0' name='operation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRefreshingWithStateOfTask:'>
+<arg declared_type='NSURLSessionTask*' index='0' name='task' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='UIWebView'>
+<method selector='loadRequest:MIMEType:textEncodingName:progress:success:failure:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='NSString*' index='1' name='MIMEType' type='@'/>
+<arg declared_type='NSString*' index='2' name='textEncodingName' type='@'/>
+<arg declared_type='void (^)(NSUInteger, long long, long long)' function_pointer='true' index='3' name='progress' type='@?'>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='long long' type='q'/>
+<arg declared_type='long long' type='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='NSData *(^)(NSHTTPURLResponse *, NSData *)' function_pointer='true' index='4' name='success' type='@?'>
+<arg declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='NSData*' type='@'/>
+<retval declared_type='NSData*' type='@'/>
+</arg>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='5' name='failure' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='loadRequest:progress:success:failure:'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='void (^)(NSUInteger, long long, long long)' function_pointer='true' index='1' name='progress' type='@?'>
+<arg declared_type='NSUInteger' type='I' type64='Q'/>
+<arg declared_type='long long' type='q'/>
+<arg declared_type='long long' type='q'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<arg declared_type='NSString *(^)(NSHTTPURLResponse *, NSString *)' function_pointer='true' index='2' name='success' type='@?'>
+<arg declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='NSString*' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</arg>
+<arg declared_type='void (^)(NSError *)' function_pointer='true' index='3' name='failure' type='@?'>
+<arg declared_type='NSError*' type='@'/>
+<retval declared_type='void' type='v'/>
+</arg>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='requestSerializer'>
+<retval declared_type='AFHTTPRequestSerializer*' type='@'/>
+</method>
+<method selector='responseSerializer'>
+<retval declared_type='AFHTTPResponseSerializer*' type='@'/>
+</method>
+<method selector='setRequestSerializer:'>
+<arg declared_type='AFHTTPRequestSerializer*' index='0' name='requestSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setResponseSerializer:'>
+<arg declared_type='AFHTTPResponseSerializer*' index='0' name='responseSerializer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<informal_protocol name='AFImageCache'>
+<method selector='cacheImage:forRequest:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='UIImage*' index='0' name='image' type='@'/>
+<arg declared_type='NSURLRequest*' index='1' name='request' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cachedImageForRequest:' type='@12@0:4@8' type64='@24@0:8@16'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='AFMultipartFormData'>
+<method selector='appendPartWithFileData:name:fileName:mimeType:' type='v24@0:4@8@12@16@20' type64='v48@0:8@16@24@32@40'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSString*' index='2' name='fileName' type='@'/>
+<arg declared_type='NSString*' index='3' name='mimeType' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='appendPartWithFileURL:name:error:' type='B20@0:4@8@12^@16' type64='B40@0:8@16@24^@32'>
+<arg declared_type='NSURL*' index='0' name='fileURL' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSError**' index='2' name='error' type='^@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='appendPartWithFileURL:name:fileName:mimeType:error:' type='B28@0:4@8@12@16@20^@24' type64='B56@0:8@16@24@32@40^@48'>
+<arg declared_type='NSURL*' index='0' name='fileURL' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSString*' index='2' name='fileName' type='@'/>
+<arg declared_type='NSString*' index='3' name='mimeType' type='@'/>
+<arg declared_type='NSError**' index='4' name='error' type='^@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='appendPartWithFormData:name:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='NSData*' index='0' name='data' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='appendPartWithHeaders:body:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='NSDictionary*' index='0' name='headers' type='@'/>
+<arg declared_type='NSData*' index='1' name='body' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='appendPartWithInputStream:name:fileName:length:mimeType:' type='v32@0:4@8@12@16q20@28' type64='v56@0:8@16@24@32q40@48'>
+<arg declared_type='NSInputStream*' index='0' name='inputStream' type='@'/>
+<arg declared_type='NSString*' index='1' name='name' type='@'/>
+<arg declared_type='NSString*' index='2' name='fileName' type='@'/>
+<arg declared_type='int64_t' index='3' name='length' type='q'/>
+<arg declared_type='NSString*' index='4' name='mimeType' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='throttleBandwidthWithPacketSize:delay:' type='v20@0:4I8d12' type64='v32@0:8Q16d24'>
+<arg declared_type='NSUInteger' index='0' name='numberOfBytes' type='I' type64='Q'/>
+<arg declared_type='NSTimeInterval' index='1' name='delay' type='d'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='AFURLRequestSerialization'>
+<method selector='requestBySerializingRequest:withParameters:error:' type='@20@0:4@8@12^@16' type64='@40@0:8@16@24^@32'>
+<arg declared_type='NSURLRequest*' index='0' name='request' type='@'/>
+<arg declared_type='id' index='1' name='parameters' type='@'/>
+<arg declared_type='NSError**' index='2' name='error' type='^@'/>
+<retval declared_type='NSURLRequest*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='AFURLResponseSerialization'>
+<method selector='responseObjectForResponse:data:error:' type='@20@0:4@8@12^@16' type64='@40@0:8@16@24^@32'>
+<arg declared_type='NSURLResponse*' index='0' name='response' type='@'/>
+<arg declared_type='NSData*' index='1' name='data' type='@'/>
+<arg declared_type='NSError**' index='2' name='error' type='^@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GMSIndoorDisplayDelegate'>
+<method selector='didChangeActiveBuilding:' type='v12@0:4@8' type64='v24@0:8@16'>
+<arg declared_type='GMSIndoorBuilding*' index='0' name='building' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='didChangeActiveLevel:' type='v12@0:4@8' type64='v24@0:8@16'>
+<arg declared_type='GMSIndoorLevel*' index='0' name='level' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GMSMapViewDelegate'>
+<method selector='didTapMyLocationButtonForMapView:' type='B12@0:4@8' type64='B24@0:8@16'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mapView:didBeginDraggingMarker:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didChangeCameraPosition:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSCameraPosition*' index='1' name='position' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didDragMarker:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didEndDraggingMarker:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didLongPressAtCoordinate:' type='v28@0:4@8{?=dd}12' type64='v40@0:8@16{?=dd}24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didTapAtCoordinate:' type='v28@0:4@8{?=dd}12' type64='v40@0:8@16{?=dd}24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='1' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didTapInfoWindowOfMarker:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:didTapMarker:' type='B16@0:4@8@12' type64='B32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mapView:didTapOverlay:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSOverlay*' index='1' name='overlay' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:idleAtCameraPosition:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSCameraPosition*' index='1' name='position' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mapView:markerInfoContents:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='mapView:markerInfoWindow:' type='@16@0:4@8@12' type64='@32@0:8@16@24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='UIView*' type='@'/>
+</method>
+<method selector='mapView:willMove:' type='v16@0:4@8B12' type64='v28@0:8@16B24'>
+<arg declared_type='GMSMapView*' index='0' name='mapView' type='@'/>
+<arg declared_type='BOOL' index='1' name='gesture' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GMSPanoramaViewDelegate'>
+<method selector='panoramaView:didMoveCamera:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSPanoramaView*' index='0' name='panoramaView' type='@'/>
+<arg declared_type='GMSPanoramaCamera*' index='1' name='camera' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didMoveToPanorama:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='GMSPanorama*' index='1' name='panorama' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didMoveToPanorama:nearCoordinate:' type='v32@0:4@8@12{?=dd}16' type64='v48@0:8@16@24{?=dd}32'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='GMSPanorama*' index='1' name='panorama' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='2' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didTap:' type='v20@0:4@8{CGPoint=ff}12' type64='v40@0:8@16{CGPoint=dd}24'>
+<arg declared_type='GMSPanoramaView*' index='0' name='panoramaView' type='@'/>
+<arg declared_type='CGPoint' index='1' name='point' type='{CGPoint=ff}' type64='{CGPoint=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:didTapMarker:' type='B16@0:4@8@12' type64='B32@0:8@16@24'>
+<arg declared_type='GMSPanoramaView*' index='0' name='panoramaView' type='@'/>
+<arg declared_type='GMSMarker*' index='1' name='marker' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='panoramaView:error:onMoveNearCoordinate:' type='v32@0:4@8@12{?=dd}16' type64='v48@0:8@16@24{?=dd}32'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='NSError*' index='1' name='error' type='@'/>
+<arg declared_type='CLLocationCoordinate2D' index='2' name='coordinate' type='{_CLLocationCoordinate2D=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:error:onMoveToPanoramaID:' type='v20@0:4@8@12@16' type64='v40@0:8@16@24@32'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='NSError*' index='1' name='error' type='@'/>
+<arg declared_type='NSString*' index='2' name='panoramaID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='panoramaView:willMoveToPanoramaID:' type='v16@0:4@8@12' type64='v32@0:8@16@24'>
+<arg declared_type='GMSPanoramaView*' index='0' name='view' type='@'/>
+<arg declared_type='NSString*' index='1' name='panoramaID' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='GMSTileReceiver'>
+<method selector='receiveTileWithX:y:zoom:image:' type='v24@0:4I8I12I16@20' type64='v48@0:8Q16Q24Q32@40'>
+<arg declared_type='NSUInteger' index='0' name='x' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='1' name='y' type='I' type64='Q'/>
+<arg declared_type='NSUInteger' index='2' name='zoom' type='I' type64='Q'/>
+<arg declared_type='UIImage*' index='3' name='image' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>

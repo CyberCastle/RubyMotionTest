@@ -1,0 +1,4 @@
+RubyMotionTest
+==============
+
+Probando RubyMotion + Cocoapods

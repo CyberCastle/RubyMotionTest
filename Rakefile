@@ -5,11 +5,15 @@ require 'rubygems'
 require 'motion-cocoapods'
 require 'ProMotion'
 require 'AFMotion'
+require 'bundler'
+
+# Usamos Bundler para el manejo de dependencias
+Bundler.require
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'RubyMotionTest'
-    app.identifier = 'cl.cybercastle.castlebot'
+  app.identifier = 'cl.cybercastle.castlebot'
 
   app.pods do
     pod 'Google-Maps-iOS-SDK'
